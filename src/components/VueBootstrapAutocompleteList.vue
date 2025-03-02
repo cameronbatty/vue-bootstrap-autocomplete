@@ -1,5 +1,16 @@
 <template>
   <div :is="'ul'" :class="['list-group', matchedItems.length && 'shadow']" ref="suggestionList">
+    <li
+      class="vbst-item list-group-item list-group-item-action disabled"
+      v-if="$scopedSlots.listHeader"
+      tabindex="-1"
+      disabled="disabled"
+      aria-selected="false"
+    >
+      <template>
+        <slot name="listHeader" v-bind="{ data, htmlText }" />
+      </template>
+    </li>
     <vue-bootstrap-autocomplete-list-item
       v-for="(item, id) in matchedItems"
       :key="id"
@@ -40,6 +51,17 @@
       </template>
       <template v-else>
         {{ noResultsInfo }}
+      </template>
+    </li>
+    <li
+      class="vbst-item list-group-item list-group-item-action disabled"
+      v-if="$scopedSlots.listFooter"
+      tabindex="-1"
+      disabled="disabled"
+      aria-selected="false"
+    >
+      <template>
+        <slot name="listFooter" v-bind="{ data, htmlText }" />
       </template>
     </li>
   </div>
