@@ -7,8 +7,8 @@
       disabled="disabled"
       aria-selected="false"
     >
-      <template slot="listHeader" slot-scope="{ handleChildBlur }">
-        <slot name="listHeader" v-bind="{ handleChildBlur }" />
+      <template>
+        <slot name="listHeader" />
       </template>
     </li>
     <vue-bootstrap-autocomplete-list-item
@@ -60,8 +60,8 @@
       disabled="disabled"
       aria-selected="false"
     >
-      <template slot="listFooter" slot-scope="{ handleChildBlur }">
-        <slot name="listFooter" v-bind="{ handleChildBlur }" />
+      <template>
+        <slot name="listFooter" />
       </template>
     </li>
   </div>
@@ -236,9 +236,7 @@ export default {
           break
       }
     },
-    handleChildBlur() {
-      this.$emit('listItemBlur')
-    },
+
     handleHit(item, evt) {
       this.$emit('hit', item)
       evt.preventDefault()

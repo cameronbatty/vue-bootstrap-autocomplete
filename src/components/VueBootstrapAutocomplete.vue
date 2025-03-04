@@ -72,9 +72,9 @@
       <template
         v-for="(slot, slotName) in $scopedSlots"
         :slot="slotName"
-        slot-scope="{ data, htmlText, handleChildBlur }"
+        slot-scope="{ data, htmlText }"
       >
-        <slot :name="slotName" v-bind="{ data, htmlText, handleChildBlur }"></slot>
+        <slot :name="slotName" v-bind="{ data, htmlText }"></slot>
       </template>
       <!-- below is the right solution, however if the user does not provide a scoped slot, vue will still set $scopedSlots.suggestion to a blank scope
       <template v-if="$scopedSlots.suggestion" slot="suggestion" slot-scope="{ data, htmlText }">
