@@ -7,7 +7,7 @@
       disabled="disabled"
       aria-selected="false"
     >
-      <template slot-scope="{ handleChildBlur }">
+      <template slot="listHeader" slot-scope="{ handleChildBlur }">
         <slot name="listHeader" v-bind="{ handleChildBlur }" />
       </template>
     </li>
@@ -60,7 +60,7 @@
       disabled="disabled"
       aria-selected="false"
     >
-      <template slot-scope="{ handleChildBlur }">
+      <template slot="listFooter" slot-scope="{ handleChildBlur }">
         <slot name="listFooter" v-bind="{ handleChildBlur }" />
       </template>
     </li>
