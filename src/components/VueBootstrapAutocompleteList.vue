@@ -8,7 +8,7 @@
       aria-selected="false"
     >
       <template>
-        <slot name="listHeader" />
+        <slot name="listHeader" v-bind="{ handleChildBlur }" />
       </template>
     </li>
     <vue-bootstrap-autocomplete-list-item
@@ -61,7 +61,7 @@
       aria-selected="false"
     >
       <template>
-        <slot name="listFooter" />
+        <slot name="listFooter" v-bind="{ handleChildBlur }" />
       </template>
     </li>
   </div>
