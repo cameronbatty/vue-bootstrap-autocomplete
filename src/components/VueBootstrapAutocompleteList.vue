@@ -6,6 +6,7 @@
       tabindex="-1"
       disabled="disabled"
       aria-selected="false"
+      @click="$emit('listItemBlur')"
     >
       <template>
         <slot name="listHeader" />
@@ -59,6 +60,7 @@
       tabindex="-1"
       disabled="disabled"
       aria-selected="false"
+      @click="$emit('listItemBlur')"
     >
       <template>
         <slot name="listFooter" />
